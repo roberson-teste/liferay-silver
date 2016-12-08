@@ -2,6 +2,6 @@
 
 stage 'build_Project'
 node {  
-  sh 'gradle build --info'
+  sh './gradlew build --info'
 }
 
