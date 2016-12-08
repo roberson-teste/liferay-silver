@@ -1,2 +1,6 @@
-stage "Build/Test"
-sh "./gradlew clean build"
+#!/usr/bin/env groovy
+
+node {
+	stage "Build/Test"
+	sh "./gradlew clean build"
+}
