@@ -1,7 +1,2 @@
-#!/usr/bin/env groovy
-
-stage 'build_Project'
-node {  
-  sh './gradlew build --info'
-}
-
+stage "Build/Test"
+sh "./gradlew clean build"
