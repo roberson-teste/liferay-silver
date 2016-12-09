@@ -1,6 +1,7 @@
 #!groovy
 
 node {
+	echo 'starting awesome pipeline'
 	stage('SCM Checkout') {
 		checkout scm
 	}
