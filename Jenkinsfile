@@ -1,7 +1,13 @@
 #!groovy
 
 node {
-	echo 'starting awesome pipeline'
+	stage('Info') {
+		echo 'starting awesome pipeline'
+	    sh 'env > env.txt'
+		readFile('env.txt').split("\r?\n").each {
+			println it
+		}
+	}
 	stage('SCM Checkout') {
 		checkout scm
 	}
