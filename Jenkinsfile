@@ -4,9 +4,7 @@ node {
 	stage('Info') {
 		echo 'starting awesome pipeline'
 	    sh 'env > env.txt'
-		readFile('env.txt').split("\r?\n").each {
-			println it
-		}
+		sh 'cat env.txt'
 	}
 	stage('SCM Checkout') {
 		checkout scm
