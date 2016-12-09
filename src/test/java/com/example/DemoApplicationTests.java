@@ -17,7 +17,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void myTest() {
-		//Assert.fail();
+		Assert.fail();
 	}
 
 }

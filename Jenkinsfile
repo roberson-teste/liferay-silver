@@ -1,8 +1,16 @@
-#!/usr/bin/env groovy
+#!groovy
 
 node {
-	checkout scm
-	env.JAVA_HOME="${tool 'jdk-8u112'}"
-	sh "./gradlew clean build"
-	step([$class: "JUnitResultArchiver", testResults: "build/**/TEST-*.xml"])
+	stage('SCM Checkout') {
+		checkout scm
+	}
+	stage('Environment Setup') {
+		env.JAVA_HOME="${tool 'jdk-8u112'}"
+	}
+	stage('Build') {
+		sh "./gradlew clean build"
+	}
+	stage('Test Report') {
+		junit "build/**/TEST-*.xml"
+	}
 }
