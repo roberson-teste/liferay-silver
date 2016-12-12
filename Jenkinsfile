@@ -10,7 +10,7 @@ node {
 		checkout scm
 	}
 	stage('Environment Setup') {
-		env.JAVA_HOME="${tool 'jdk-8u112'}"
+		//env.JAVA_HOME="${tool 'jdk-8u112'}"
 		bat "gradlew.bat clean"
 	}
 	stage('Build') {
