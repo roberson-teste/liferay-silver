@@ -16,11 +16,11 @@ node {
 	stage('Build') {
 		bat "gradlew.bat build -x test"
 	}
-    stage('Test') {
-        try {
-            bat "gradlew.bat test"
-        } finally {
-            junit "build/**/TEST-*.xml"
-        }
+	stage('Test') {
+		try {
+			bat "gradlew.bat test"
+		} finally {
+			junit "build/**/TEST-*.xml"
+		}
     }
 }
