@@ -17,7 +17,8 @@ public class DemoApplicationTests {
 
 	@Test
 	public void myTest() {
-		//Assert.fail();
+		//should fail
+		Assert.fail("intended failure");
 	}
 
 }
