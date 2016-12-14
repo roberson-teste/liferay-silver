@@ -7,16 +7,16 @@ node {
 	}
 
 	stage('Setup') {
-		bat 'gradlew.bat clean'
+		bat 'gradlew clean'
 	}
 
 	stage('Build') {
-		bat 'gradlew.bat build -x test'
+		bat 'gradlew build -x test'
 	}
 
 	stage('Test') {
 		try {
-			bat 'gradlew.bat test'
+			bat 'gradlew test'
 		} finally {
 			junit 'build/**/TEST-*.xml'
 		}
